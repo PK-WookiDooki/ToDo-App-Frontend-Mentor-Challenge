@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Todo App with HTML, CSS and JS. (Challenge from Frontend Mentor)">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="">
+<meta property="og:description" content="Todo App with HTML, CSS and JS. (Challenge from Frontend Mentor)">
+<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+
+
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+
+  <main>
+    <div class="images">
+      <div class="desktopBg">
+        <img src="./images/bg-desktop-light.jpg" alt="" id="dLight" class="bgImage"/>
+        <img src="./images/bg-desktop-dark.jpg" alt="" id="dDark" class="bgImage"/>
+      </div>
+      <div class="mobileBg">
+        <img src="./images/bg-mobile-light.jpg" alt="" id="mLight" class="bgImage"/>
+        <img src="./images/bg-mobile-dark.jpg" alt="" id="mDark" class="bgImage"/>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="header">
+        <h1>TODO</h1>
+        <div class="theme">
+          <span id="moonIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+              <path
+                class="shadow"  
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+              />
+            </svg>
+          </span>
+          <span id="sunIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="createList">
+        <form class="createBox" autocomplete="off">
+          <div class="circle"></div>
+          <span class="checkIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 4.304L3.696 7l6-6"
+              />
+            </svg>
+          </span>
+          <input
+            type="text"
+            name="text"
+            id="textBox"
+            placeholder="Create a new todo..."
+          />
+          <span class="addBtn" id="addBtn">
+            <img src="./images/icon-check.svg" alt="" />
+          </span>
+        </form>
+      </div>
+
+      <div class="toDoLists">
+        <div class="listedItems">
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">Completed online Java Script Course</span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">Jog around the park 3x</span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">10 minutes meditation</span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">Read for 1 hour </span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">Pick up groceries</span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+
+          <form action="" class="input-group">
+            <div class="circle"></div>
+            <span class="checkIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </span>
+            <span class="text">Completed Todo App on Frontend Mentor</span>
+            <span class="closeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </span>
+          </form>
+        </div>
+      
+        <div class="filterBox">
+          <div class="itemsTodo">
+            <span id="listNumber">6</span>
+            <span>Items left</span>
+          </div>
+
+          <div class="filterLinks">
+            <a href="#" id="all" class="flink active">All</a>
+            <a href="#" id="activeLists" class="flink">Active</a>
+            <a href="#" id="completedLists" class="flink">Completed</a>
+          </div>
+
+          <a href="#" id="clear">Clear Completed</a>
+        </div>
+      </div>
+
+
+      <div class="DandD">
+        <p>Drag and drop to reorder list.</p>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/PK-WookiDooki" target="_blank">Wooki Dooki</a>.
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
