@@ -158,6 +158,7 @@ addBtn.onclick = ()=> {
     clear.onclick = function(){
         iGroup.forEach(group => {
           if(group.classList.contains('active')){
+            group.classList.add('clearActive');
             group.style.display = 'none';
           }
           else{
@@ -167,6 +168,7 @@ addBtn.onclick = ()=> {
         
         forms.forEach(form => {
           if(form.classList.contains('active')){
+            form.classList.add('clearActive');
             form.style.display = 'none';
           }
           else{
@@ -177,7 +179,7 @@ addBtn.onclick = ()=> {
   
       allLists.onclick = () => {
         iGroup.forEach(group => {
-          if(group.querySelector('.closeBtn').classList.contains('active')){
+          if(group.querySelector('.closeBtn').classList.contains('active') || group.classList.contains('clearActive')){
             group.style.display = 'none';
           }
           else{
@@ -185,7 +187,7 @@ addBtn.onclick = ()=> {
           }
       });
         forms.forEach(form => {
-          if(delBtn.classList.contains('active')){
+          if(delBtn.classList.contains('active') || form.classList.contains('clearActive')){
             form.style.display = 'none';
           }
           else{
@@ -216,7 +218,7 @@ addBtn.onclick = ()=> {
   
       completedLists.onclick = function(){
         iGroup.forEach(group => {
-          if(group.classList.contains('active') && group.querySelector('.closeBtn').classList.contains('active')){
+          if((group.classList.contains('active') && group.querySelector('.closeBtn').classList.contains('active')) || group.classList.contains('clearActive')){
             group.style.display = 'none';
           }
           else if(group.classList.contains('active')){
@@ -228,7 +230,7 @@ addBtn.onclick = ()=> {
         });
   
         forms.forEach(form => {
-            if(form.classList.contains('active') && delBtn.classList.contains('active')){
+            if((form.classList.contains('active') && delBtn.classList.contains('active')) || form.classList.contains('clearActive')){
               form.style.display = 'none';
             }
             else if(form.classList.contains('active')){
@@ -248,7 +250,7 @@ addBtn.onclick = ()=> {
 let allLists = document.getElementById('all');
 allLists.onclick = () => {
   iGroup.forEach(group => {
-      if(group.querySelector('.closeBtn').classList.contains('active')){
+      if(group.querySelector('.closeBtn').classList.contains('active') || group.classList.contains('clearActive')){
         group.style.display = 'none';
       }
       else{
@@ -272,7 +274,7 @@ activeLists.onclick = function(){
 let completedLists = document.getElementById('completedLists');
 completedLists.onclick = function(){
   iGroup.forEach(group => {
-    if(group.classList.contains('active') && group.querySelector('.closeBtn').classList.contains('active')){
+    if((group.classList.contains('active') && group.querySelector('.closeBtn').classList.contains('active')) || group.classList.contains('clearActive')){
       group.style.display = 'none';
     }
     else if(group.classList.contains('active')){
@@ -286,9 +288,9 @@ completedLists.onclick = function(){
 
 let clear = document.getElementById('clear');
 clear.onclick =  function(){
-  clear.classList.toggle('active');
   iGroup.forEach(group => {
     if(group.classList.contains('active')){
+      group.classList.add('clearActive');
       group.style.display = 'none';
     }
     else{
