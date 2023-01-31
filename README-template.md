@@ -34,8 +34,8 @@ Users should be able to:
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
 
-- Solution URL: [https://github.com/PK-WookiDooki/Todo_Web_App-Frontend-Mentor-Challenge]
-- Live Site URL: []
+- Solution URL: [https://github.com/PK-WookiDooki/ToDo-App-Frontend-Mentor-Challenge.git]
+- Live Site URL: [https://tiny-cajeta-542637.netlify.app/#]
 
 ## My process
 
