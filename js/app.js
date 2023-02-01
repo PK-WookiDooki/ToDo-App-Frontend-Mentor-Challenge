@@ -120,10 +120,10 @@ addBtn.onclick = ()=> {
     circle.onclick = function(){
       form.classList.toggle('active');
       if(form.classList.contains('active')){
-        totalactiveLists += 1;
+        totalactiveLists -= 1;
       }
       else{
-          totalactiveLists -= 1;
+          totalactiveLists += 1;
       }
       listNumber.textContent = totalactiveLists;
     }
