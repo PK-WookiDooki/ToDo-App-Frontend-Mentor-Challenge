@@ -80,170 +80,15 @@ let listedItems = document.querySelector(".listedItems");
 let listId = 0;
 const forms = [];
 
-newInput.addEventListener('keypress', (event)=>{
-  if(event.key === "Enter"){
-    event.preventDefault();
-    totalactiveLists += 1;
-    listNumber.textContent = totalactiveLists;
-    addBtn.classList.remove("active");
-
-    let form = document.createElement("form");
-    form.className = "input-group";
-    listedItems.appendChild(form);
-
-    let span = document.createElement('span');
-    span.className = 'text';
-    let inputText = newInput.value;
-    span.textContent = inputText;
-    form.appendChild(span);
-    span.onclick = function(){
-        form.classList.toggle('active');
-        if(form.classList.contains('active')){
-            totalactiveLists -= 1;
-        }
-        else{
-            totalactiveLists += 1;
-        }
-        listNumber.textContent = totalactiveLists;
-    }
-
-    listId++;
-    newInput.value = "";
-
-
-    let circle = document.createElement("div");
-    circle.className = "circle";
-    form.appendChild(circle);
-
-    circle.onclick = function(){
-      form.classList.toggle('active');
-      if(form.classList.contains('active')){
-        totalactiveLists -= 1;
-      }
-      else{
-          totalactiveLists += 1;
-      }
-      listNumber.textContent = totalactiveLists;
-    }
-
-    let tick = document.createElement("span");
-    tick.className = "checkIcon";
-    tick.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"> <path fill="none" stroke="#fff" stroke-width="2" d="M1 4.304L3.696 7l6-6"/></svg>';
-    form.appendChild(tick);
-
-
-    let delBtn = document.createElement("span");
-    delBtn.className = "closeBtn";
-    delBtn.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>';
-    form.appendChild(delBtn);
-    delBtn.onclick = function(){
-        delBtn.classList.add('active');
-        this.parentElement.style.display = 'none';
-        forms.pop(delBtn.parentElement);
-        console.log(forms.length)
-        if(delBtn.parentElement.classList.contains('active')){
-            totalactiveLists = totalactiveLists;
-          }
-          else{
-            totalactiveLists -= 1;
-          }
-          listNumber.textContent = totalactiveLists;
-    }
-    forms.push(form);
-    console.log(forms.length)
-    clear.onclick = function(){
-        iGroup.forEach(group => {
-          if(group.classList.contains('active')){
-            group.classList.add('clearActive');
-            group.style.display = 'none';
-          }
-          else{
-            return;
-          }
-        })
-        
-        forms.forEach(form => {
-          if(form.classList.contains('active')){
-            form.classList.add('clearActive');
-            form.style.display = 'none';
-          }
-          else{
-              return;
-          }
-        })
-      };
-  
-      allLists.onclick = () => {
-        iGroup.forEach(group => {
-          if(group.querySelector('.closeBtn').classList.contains('active') || group.classList.contains('clearActive')){
-            group.style.display = 'none';
-          }
-          else{
-            group.style.display = 'flex'
-          }
-      });
-        forms.forEach(form => {
-          if(delBtn.classList.contains('active') || form.classList.contains('clearActive')){
-            form.style.display = 'none';
-          }
-          else{
-            form.style.display = 'flex';
-          }
-        })
-      }
-  
-      activeLists.onclick = function(){
-        iGroup.forEach(group => {
-          if(group.classList.contains('active') || group.querySelector('.closeBtn').classList.contains('active')){
-            group.style.display = 'none';
-          }
-          else{
-            group.style.display = 'flex'
-          }
-        });
-  
-        forms.forEach(form => {
-          if(form.classList.contains('active') || delBtn.classList.contains('active')){
-            form.style.display = 'none';
-          }
-          else{
-            form.style.display = 'flex';
-          }
-        })
-      }
-  
-      completedLists.onclick = function(){
-        iGroup.forEach(group => {
-          if((group.classList.contains('active') && group.querySelector('.closeBtn').classList.contains('active')) || group.classList.contains('clearActive')){
-            group.style.display = 'none';
-          }
-          else if(group.classList.contains('active')){
-            group.style.display = 'flex';
-          }
-          else{
-            group.style.display = 'none';
-          }
-        });
-  
-        forms.forEach(form => {
-            if((form.classList.contains('active') && delBtn.classList.contains('active')) || form.classList.contains('clearActive')){
-              form.style.display = 'none';
-            }
-            else if(form.classList.contains('active')){
-              form.style.display = 'flex';
-            }
-            else{
-              form.style.display = 'none';
-            }
-          });
-        
-      }
+addBtn.onclick = createNewTask;
+window.addEventListener('keypress', (elemnt)=>{
+  if(elemnt.key === "Enter"){
+    elemnt.preventDefault();
+    createNewTask();
   }
-});
+})
 
-addBtn.onclick = ()=> {
+function createNewTask() {
     if (newInput.value === "") {
         alert("You need to write something to make todo list!");
     }
@@ -408,6 +253,7 @@ addBtn.onclick = ()=> {
 
     }
 }
+
 
 
 let allLists = document.getElementById('all');

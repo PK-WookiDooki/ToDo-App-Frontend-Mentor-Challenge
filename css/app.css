@@ -255,6 +255,9 @@ body.active {
   body.active .circle {
     border-color: hsl(233, 14%, 35%);
   }
+  body.active .attribution{
+    color: hsl(233, 11%, 84%);
+  }
 
   @media screen and (max-width: 600px) {
     .container {
